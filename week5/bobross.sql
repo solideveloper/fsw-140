@@ -53,6 +53,11 @@ as select episode, title, moon, clouds, waves
 from elements;
 alter table favorite_elements add water int not null;
 alter table favorite_elements add sun int not null;
+ALTER TABLE elements
+ADD CONSTRAINT FK_title
+FOREIGN KEY (title(255)) REFERENCES 
+favorite_elements(title);
+
 select * from favorite_elements;
 
 -- 6. Joins and Multiple Table Joins:
